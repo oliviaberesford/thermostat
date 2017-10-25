@@ -17,19 +17,34 @@ describe("thermostat", function() {
   });
 
   it("can increase the temperature", function(){
-    thermostat._incTemp(3);
+    thermostat.incTemp(3);
     expect(thermostat.viewTemp()).toEqual(23);
   });
 
   it("can decrease the temperature", function(){
-    thermostat._decTemp(3);
+    thermostat.decTemp(3);
     expect(thermostat.viewTemp()).toEqual(17);
   });
 
   it("resets the temperature to default", function() {
     thermostat = new Thermostat(16);
-    thermostat._reset()
+    thermostat.reset()
     expect(thermostat.viewTemp()).toEqual(20);
+  });
+
+  it("can show current low energy usage", function() {
+    thermostat = new Thermostat(15);
+    expect(thermostat.currentEnergyUse()).toEqual("low-usage")
+  });
+
+  it("can show current mid energy usage", function() {
+    thermostat = new Thermostat(20);
+    expect(thermostat.currentEnergyUse()).toEqual("medium-usage")
+  });
+
+  it("can show current high energy usage", function() {
+    thermostat = new Thermostat(30);
+    expect(thermostat.currentEnergyUse()).toEqual("high-usage")
   });
 
 });
