@@ -16,4 +16,9 @@ describe("thermostat", function() {
     expect(thermostat.viewTemp()).toEqual(20);
   });
 
+  it("can increse the temperature", function(){
+    thermostat._incTemp(3);
+    expect(thermostat.viewTemp()).toEqual(23);
+  });
+
 });
