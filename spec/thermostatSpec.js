@@ -26,4 +26,10 @@ describe("thermostat", function() {
     expect(thermostat.viewTemp()).toEqual(17);
   });
 
+  it("resets the temperature to default", function() {
+    thermostat = new Thermostat(16);
+    thermostat._reset()
+    expect(thermostat.viewTemp()).toEqual(20);
+  });
+
 });

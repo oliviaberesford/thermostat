@@ -15,3 +15,7 @@ Thermostat.prototype._incTemp = function(num){
 Thermostat.prototype._decTemp = function(num){
   this.temp -= num;
 };
+
+Thermostat.prototype._reset = function(){
+  this.temp = DEFAULT_TEMP
+};
