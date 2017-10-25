@@ -8,7 +8,7 @@ describe("PowerSaving", function() {
 
   });
 
-  it("powersaving mode switched on by default", function(){
+  it("powersaving mode switched on by default", function() {
     expect(powerSaving.status).toEqual(true);
   });
 
