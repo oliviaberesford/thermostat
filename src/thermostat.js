@@ -4,6 +4,7 @@ function Thermostat(temp = DEFAULT_TEMP) {
 };
 
 const DEFAULT_TEMP = 20
+const MIN_TEMP = 10
 const MAX_TEMP = 32
 const POWER_SAVING_MAX_TEMP = 25
 
@@ -21,7 +22,11 @@ Thermostat.prototype.incTemp = function(num) {
 };
 
 Thermostat.prototype.decTemp = function(num) {
+  if (this.temp - num < MIN_TEMP) {
+    throw new Error("Cannot go below 10 degrees!!!");
+  } else {
   this.temp -= num;
+  }
 };
 
 Thermostat.prototype.reset = function() {

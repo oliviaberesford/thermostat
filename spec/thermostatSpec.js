@@ -66,4 +66,10 @@ describe("thermostat", function() {
     }).toThrowError("Cannot exceed 25 degrees!!!");
   });
 
+  it("cannot go below the minimum temperature", function() {
+    expect(function() {
+      thermostat.decTemp(15);
+    }).toThrowError("Cannot go below 10 degrees!!!");
+  });
+
 });
