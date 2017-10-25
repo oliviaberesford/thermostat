@@ -11,3 +11,7 @@ Thermostat.prototype.viewTemp = function() {
 Thermostat.prototype._incTemp = function(num){
   this.temp += num;
 };
+
+Thermostat.prototype._decTemp = function(num){
+  this.temp -= num;
+};
