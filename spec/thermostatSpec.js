@@ -8,6 +8,11 @@ describe("thermostat", function() {
   });
 
   it("shows us the temperature", function() {
+    thermostat = new Thermostat(16);
+    expect(thermostat.viewTemp()).toEqual(16);
+  });
+
+  it("has a default temperature of 20", function() {
     expect(thermostat.viewTemp()).toEqual(20);
   });
 

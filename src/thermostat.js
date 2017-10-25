@@ -1,7 +1,9 @@
-function Thermostat (){
-
+function Thermostat (temp = DEFAULT_TEMP) {
+  this.temp = temp
 };
 
-Thermostat.prototype.viewTemp = function(){
-  return 20;
+const DEFAULT_TEMP = 20
+
+Thermostat.prototype.viewTemp = function() {
+  return this.temp;
 };
