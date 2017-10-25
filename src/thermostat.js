@@ -47,6 +47,10 @@ Thermostat.prototype.powerSavingOff = function() {
   this.powerSaving.turnOff();
 };
 
+Thermostat.prototype.powerSavingOn = function() {
+  this.powerSaving.turnOn();
+};
+
 Thermostat.prototype._powerSaveOffIncTemp = function(num) {
   if (this.temp + num >= MAX_TEMP) {
     throw new Error("Cannot exceed 32 degrees!!!");
