@@ -47,7 +47,4 @@ describe("thermostat", function() {
     expect(thermostat.currentEnergyUse()).toEqual("high-usage")
   });
 
-  // it("powersaving mode switched on by default", function(){
-  //   expect(thermostat.powerSaving).toEqual(true)
-  // });
 });

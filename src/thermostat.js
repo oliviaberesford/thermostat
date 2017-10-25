@@ -1,6 +1,6 @@
 function Thermostat (temp = DEFAULT_TEMP) {
   this.temp = temp
-  // this.powerSaving = new PowerSaving;
+  
 };
 
 const DEFAULT_TEMP = 20
@@ -9,10 +9,6 @@ const DEFAULT_TEMP = 20
 Thermostat.prototype.viewTemp = function() {
   return this.temp;
 };
-
-// Thermostat.prototype.viewPowerSaving = function() {
-//   return this.temp;
-// };
 
 Thermostat.prototype.incTemp = function(num) {
   this.temp += num;
