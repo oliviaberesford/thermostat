@@ -13,19 +13,20 @@ Thermostat.prototype.viewTemp = function() {
   return this.temp;
 };
 
-Thermostat.prototype.incTemp = function(num) {
+Thermostat.prototype.incTemp = function() {
   if (this.powerSaving.status === true) {
-    this._powerSaveIncTemp(num);
+    this._powerSaveIncTemp();
   } else {
-    this._powerSaveOffIncTemp(num);
+    this._powerSaveOffIncTemp();
   }
 };
 
-Thermostat.prototype.decTemp = function(num) {
-  if (this.temp - num < MIN_TEMP) {
+Thermostat.prototype.decTemp = function() {
+  if (this.temp < MIN_TEMP) {
+    window.alert("Cannot go below 10 degrees!!!")
     throw new Error("Cannot go below 10 degrees!!!");
   } else {
-  this.temp -= num;
+    this.temp -= 1;
   }
 };
 
@@ -51,18 +52,20 @@ Thermostat.prototype.powerSavingOn = function() {
   this.powerSaving.turnOn();
 };
 
-Thermostat.prototype._powerSaveOffIncTemp = function(num) {
-  if (this.temp + num >= MAX_TEMP) {
+Thermostat.prototype._powerSaveOffIncTemp = function() {
+  if (this.temp > MAX_TEMP) {
+    window.alert("Cannot exceed 32 degrees!!!")
     throw new Error("Cannot exceed 32 degrees!!!");
   } else {
-    this.temp += num;
+    this.temp += 1;
   }
 };
 
-Thermostat.prototype._powerSaveIncTemp = function(num) {
-  if (this.temp + num >= POWER_SAVING_MAX_TEMP) {
+Thermostat.prototype._powerSaveIncTemp = function() {
+  if (this.temp > POWER_SAVING_MAX_TEMP) {
+    window.alert("Cannot exceed 25 degrees!!!")
     throw new Error("Cannot exceed 25 degrees!!!");
   } else {
-    this.temp += num;
+    this.temp += 1;
   }
 };
