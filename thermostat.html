@@ -7,14 +7,22 @@
   <script src="src/powerSaving.js"></script>
   <script src="src/thermostat.js"></script>
   <script src="src/util.js"></script>
+  <link rel="stylesheet" type="text/css" href="public/stylesheet.css">
 </head>
 
 <body>
   <div>
-    <h2>London <a id="weather"></a> &#8451; Today</h2>
+    <section>
+      <h1 class="city-request">Where do you want to go today?</h1>
+      <h1 class="temp-city-display">Current outside temperature in <span id="chosen-city"></span>: <span id="weather">20</span> &#8451;</h1>
+      <form id="select-city">
+        <input id="current-city" type="text" placeholder="Enter a city"></input>
+        <input type="submit"></input>
+      </form>
+    </section>
   </div>
   <div>
-    <h1>Your current Temperature: <a id="currTemp"></a>  &#8451;</h1>
+    <h1>Your current Temperature: <span id="currTemp"></span>  &#8451;</h1>
     <div id="errors"></div>
   </div>
   <div>
