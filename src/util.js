@@ -2,6 +2,9 @@ $(document).ready(function() {
   thermostat = new Thermostat();
   $('#currTemp').html(thermostat.viewTemp());
 
+  $.get('https://api.openweathermap.org/data/2.5/weather?q=London,uk&units=metric&appid=613af242ec3e1a92edc14fdb20538167', function(data){
+    $('#weather').html(data.main.temp);
+  });
 
   $("#reset_button").click(function() {
     thermostat.reset()
